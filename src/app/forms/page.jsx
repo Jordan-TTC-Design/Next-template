@@ -1,6 +1,6 @@
 'use client'
 
-import Form from '@/components/common/forms/Form'
+import Form from '@/components/forms/Form'
 import FadeIn from '@/components/animations/FadeIn'
 
 export default function FormsPage() {
