@@ -1,7 +1,7 @@
 'use client'
 
 import useStore from '@/store/useStore'
-import Button from '@/components/Button'
+import Button from '@/components/atoms/Button'
 import Link from 'next/link'
 
 export default function Home() {
@@ -17,9 +17,9 @@ export default function Home() {
           <p className="text-2xl mb-4">Count: {count}</p>
           
           <div className="flex gap-2">
-            <Button onClick={decrement}>Decrement</Button>
-            <Button onClick={increment}>Increment</Button>
-            <Button onClick={reset} className="bg-gray-500 hover:bg-gray-600">
+            <Button intent="primary" onClick={decrement}>Decrement</Button>
+            <Button intent="primary" onClick={increment}>Increment</Button>
+            <Button intent="primary" onClick={reset} className="bg-gray-500 hover:bg-gray-600">
               Reset
             </Button>
           </div>
