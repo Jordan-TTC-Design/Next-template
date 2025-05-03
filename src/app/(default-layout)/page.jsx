@@ -16,7 +16,7 @@ export default function Home() {
           <h2 className="text-xl font-semibold mb-4">Counter Example</h2>
           <p className="text-2xl mb-4">Count: {count}</p>
           
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-2">
             <AtomsButton intent="primary" onClick={decrement}>Decrement</AtomsButton>
             <AtomsButton intent="primary" onClick={increment}>Increment</AtomsButton>
             <AtomsButton intent="primary" onClick={reset} className="bg-gray-500 hover:bg-gray-600">

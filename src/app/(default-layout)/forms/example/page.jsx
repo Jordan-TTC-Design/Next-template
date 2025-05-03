@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Controls from '@/components/common/forms/Controls'
+import Controls from '@/components/commons/forms/Controls'
 
 export default function FormExample() {
   const [formData, setFormData] = useState({

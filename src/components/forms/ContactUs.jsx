@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import Input from '@/components/common/controls/Input'
+import Input from '@/components/commons/controls/Input'
 import Button from '@/components/atoms/Button'
 import FadeIn from '@/components/animations/FadeIn'
 

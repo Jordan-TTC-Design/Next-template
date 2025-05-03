@@ -1,5 +1,4 @@
 import './globals.css'
-import DefaultLayout from '@/layouts/DefaultLayout'
 
 export const metadata = {
   title: 'Next.js Template',
@@ -10,7 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <DefaultLayout>{children}</DefaultLayout>
+        {children}
       </body>
     </html>
   )
