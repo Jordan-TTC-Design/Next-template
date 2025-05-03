@@ -27,7 +27,7 @@ export default function Home() {
           <div className="mt-6">
             <Link 
               href="/about"
-              className="text-blue-500 hover:text-blue-600 underline"
+              className="text-pr hover:text-blue-600 underline"
             >
               Go to About Page
             </Link>
