@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "format": "prettier --write .",
@@ -12,6 +12,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.27.8",
     "@hookform/resolvers": "^5.0.1",
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",

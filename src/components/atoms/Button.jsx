@@ -11,10 +11,10 @@ const button = cva(
     variants: {
       intent: {
         primary: [
-          'border-pr bg-pr text-txt-dark',
-          'lg:hover:border-pr-light lg:hover:bg-pr-light',
-          'lg:focus:border-pr-light lg:focus:bg-pr-light lg:focus:outline-none',
-          'lg:active:border-pr-dark lg:active:bg-pr-dark',
+          'border-pr bg-pr text-txt-white',
+          'lg:hover:border-pr-light lg:hover:bg-pr-light lg:hover:text-pr',
+          'lg:focus:border-pr-light lg:focus:bg-pr-light lg:focus:outline-none lg:focus:text-txt-white',
+          'lg:active:border-pr-dark lg:active:bg-pr-dark lg:active:text-txt-white',
           'disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300 disabled:text-white'
         ],
         dark: [
