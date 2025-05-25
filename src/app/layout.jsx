@@ -1,4 +1,5 @@
-import './globals.css'
+import '@/css/main.css'
+import WindowWidthProvider from '@/components/providers/WindowWidthProvider'
 
 export const metadata = {
   title: 'Next.js Template',
@@ -9,7 +10,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <WindowWidthProvider>
+        </WindowWidthProvider>
+          {children}
       </body>
     </html>
   )

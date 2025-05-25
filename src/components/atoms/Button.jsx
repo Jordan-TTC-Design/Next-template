@@ -25,7 +25,7 @@ const button = cva(
           'disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300 disabled:text-white'
         ],
         secondary: [
-          'border-gray-900 bg-gray-900 text-txt',
+          'border-gray-900 bg-gray-900 text-txt-white',
           'lg:hover:border-pr lg:hover:text-pr',
           'focus:outline-pr lg:focus:border-pr lg:focus:text-pr lg:focus:outline',
           'lg:active:border-pr lg:active:bg-pr lg:active:text-white',

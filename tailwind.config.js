@@ -123,7 +123,9 @@ const config = {
           'super-light': '#98A2B3',
           light: '#667085',
           DEFAULT: '#475467', // 預設文字顏色
-          dark: '#101828'
+          dark: '#101828',
+          white: '#FFFFFF',
+          black: '#000000'
         }
       },
       spacing: {

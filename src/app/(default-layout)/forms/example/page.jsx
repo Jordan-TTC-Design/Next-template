@@ -48,7 +48,7 @@ export default function FormExample() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
+      <div className="ontainer mx-auto bg-white rounded-lg shadow-md p-8">
         <h2 className="text-2xl font-bold mb-8 text-center">表單範例</h2>
         
         <form onSubmit={handleSubmit} className="space-y-6">

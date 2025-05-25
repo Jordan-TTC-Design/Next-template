@@ -1,0 +1,228 @@
+/* 自定義基礎樣式 */
+
+/* 重置樣式 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 基本元素樣式 */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: var(--leading-normal);
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* 圖片優化 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 表單元素重置 */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* 移除列表樣式 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 移除預設邊框 */
+button,
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+}
+
+/* 移除按鈕預設樣式 */
+button {
+  background: none;
+  cursor: pointer;
+}
+
+/* 移除連結預設樣式 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 移除表格間距 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 移除引用預設樣式 */
+blockquote,
+q {
+  quotes: none;
+}
+
+/* 移除預設邊距 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* 移除預設填充 */
+figure {
+  margin: 0;
+}
+
+/* 移除預設邊框 */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* 移除預設外觀 */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+/* 移除數字輸入框箭頭 */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 移除日期輸入框圖示 */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/* 移除文件輸入框預設樣式 */
+input[type="file"] {
+  display: none;
+}
+
+/* 移除選擇框預設樣式 */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* 移除文本區域預設樣式 */
+textarea {
+  resize: vertical;
+}
+
+/* 移除預設滾動條 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* 移除預設選擇樣式 */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-text-white);
+}
+
+/* 移除預設焦點樣式 */
+:focus {
+  outline: none;
+}
+
+/* 移除預設禁用樣式 */
+:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 移除預設隱藏樣式 */
+[hidden] {
+  display: none !important;
+}
+
+/* 移除預設讀取樣式 */
+[readonly] {
+  cursor: default;
+}
+
+/* 移除預設必填樣式 */
+[required] {
+  position: relative;
+}
+
+[required]::after {
+  content: "*";
+  color: var(--color-error);
+  margin-left: 4px;
+}
+
+/* 移除預設無效樣式 */
+:invalid {
+  box-shadow: none;
+}
+
+/* 移除預設有效樣式 */
+:valid {
+  box-shadow: none;
+}
+
+/* 移除預設佔位符樣式 */
+::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+/* 移除預設自動填充樣式 */
+:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-background) inset;
+  -webkit-text-fill-color: var(--color-text);
+}
+
+/* 移除預設自動填充樣式 */
+:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-background) inset;
+  -webkit-text-fill-color: var(--color-text);
+}
+
+/* 移除預設自動填充樣式 */
+:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-background) inset;
+  -webkit-text-fill-color: var(--color-text);
+}
+
+/* 移除預設自動填充樣式 */
+:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-background) inset;
+  -webkit-text-fill-color: var(--color-text);
+} 

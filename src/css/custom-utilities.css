@@ -1,0 +1,54 @@
+/* 
+ * 屬於 Tailwind 原生無法達成的樣式、webkit 效果
+ * class 命名原則盡量與 Tailwind 一致
+ */
+
+  /* 隱藏卷軸 */
+  .scrollbar-none {
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* 防止圖片拖曳 */
+  .no-drag {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+
+  /* Youtube iFrame 套用比例 */
+  .youtube-aspect {
+    @media (min-aspect-ratio: 16/9) {
+      height: 56.25vw;
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      width: 177.78vh;
+    }
+  }
+
+  .block-container--lg {
+    @apply mx-auto px-5 md:px-8 lg:px-10 xl:px-[80px] max-w-[1440px];
+  }
+  
+  
+  .block-container {
+    @apply mx-auto max-w-[1440px] px-5 md:px-8 lg:px-10 2xl:px-[120px];
+  }
+
+  .block-container--sm {
+    @apply mx-auto w-full px-5 md:px-8 lg:max-w-[1076px] lg:px-10;
+  }
+
+  /* 自訂的 size-2 工具類，設定寬度和高度為 0.5rem */
+  .size-2 {
+    width: 0.5rem; /* 寬度 0.5rem */
+    height: 0.5rem; /* 高度 0.5rem */
+  }
+

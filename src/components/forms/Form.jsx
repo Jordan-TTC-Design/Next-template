@@ -33,7 +33,7 @@ export default function Form() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <form onSubmit={handleSubmit(onSubmit)} className="ontainer mx-auto p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6">註冊表單</h2>
       
       <div className="space-y-4">

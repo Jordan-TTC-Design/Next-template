@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function About() {
   return (
     <main className="min-h-screen p-8">
-      <div className="max-w-md mx-auto">
+      <div className="ontainer mx-auto">
         <h1 className="text-3xl font-bold mb-8">About Page</h1>
         
         <div className="bg-white p-6 rounded-lg shadow-md">
