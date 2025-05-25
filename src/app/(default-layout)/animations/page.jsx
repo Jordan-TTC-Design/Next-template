@@ -41,6 +41,10 @@ export default function AnimationsPage() {
               <p>Hover over this card to see the effect</p>
             </div>
           </HoverEffect>
+          <FadeIn>
+          <h2 className="text-4xl font-bold mb-8">END</h2>
+        </FadeIn>
+        <div className="h-screen w-full bg-red-500"></div>
         </div>
       </div>
     </div>

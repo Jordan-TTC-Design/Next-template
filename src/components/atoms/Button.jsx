@@ -11,10 +11,10 @@ const button = cva(
     variants: {
       intent: {
         primary: [
-          'border-pr bg-pr text-txt-white',
-          'lg:hover:border-pr-light lg:hover:bg-pr-light lg:hover:text-pr',
-          'lg:focus:border-pr-light lg:focus:bg-pr-light lg:focus:outline-none lg:focus:text-txt-white',
-          'lg:active:border-pr-dark lg:active:bg-pr-dark lg:active:text-txt-white',
+          'border-primary bg-primary text-txt-white',
+          'lg:hover:border-primary-light lg:hover:bg-primary-light lg:hover:text-primary',
+          'lg:focus:border-primary-light lg:focus:bg-primary-light lg:focus:outline-none lg:focus:text-txt-white',
+          'lg:active:border-primary-dark lg:active:bg-primary-dark lg:active:text-txt-white',
           'disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300 disabled:text-white'
         ],
         dark: [
@@ -26,21 +26,21 @@ const button = cva(
         ],
         secondary: [
           'border-gray-900 bg-gray-900 text-txt-white',
-          'lg:hover:border-pr lg:hover:text-pr',
-          'focus:outline-pr lg:focus:border-pr lg:focus:text-pr lg:focus:outline',
-          'lg:active:border-pr lg:active:bg-pr lg:active:text-white',
+          'lg:hover:border-primary lg:hover:text-primary',
+          'focus:outline-primary lg:focus:border-primary lg:focus:text-primary lg:focus:outline',
+          'lg:active:border-primary lg:active:bg-primary lg:active:text-white',
           'disabled:cursor-not-allowed disabled:border-gray-400 disabled:bg-transparent disabled:text-txt-super-light'
         ],
         link: [
           'border-none bg-transparent text-txt-super-light underline',
-          'lg:hover:text-pr',
+          'lg:hover:text-primary',
           'disabled:cursor-not-allowed disabled:text-txt-super-light'
         ],
         white: [
           'border-gray-800 bg-white text-gray-800',
-          'lg:hover:border-pr lg:hover:bg-pr lg:hover:text-txt-dark',
-          'lg:focus:border-pr lg:focus:bg-pr lg:focus:text-txt-dark lg:focus:outline lg:focus:outline-pr',
-          'lg:active:border-pr lg:active:bg-pr lg:active:text-white',
+          'lg:hover:border-primary lg:hover:bg-primary lg:hover:text-txt-dark',
+          'lg:focus:border-primary lg:focus:bg-primary lg:focus:text-txt-dark lg:focus:outline lg:focus:outline-primary',
+          'lg:active:border-primary lg:active:bg-primary lg:active:text-white',
           'disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300 disabled:text-white'
         ]
       },

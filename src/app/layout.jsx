@@ -1,5 +1,6 @@
 import '@/css/main.css'
 import WindowWidthProvider from '@/components/providers/WindowWidthProvider'
+import MotionProvider from '@/components/providers/MotionProvider'
 
 export const metadata = {
   title: 'Next.js Template',
@@ -8,11 +9,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="zh-TW">
       <body>
-        <WindowWidthProvider>
-        </WindowWidthProvider>
-          {children}
+        <MotionProvider />
+        <WindowWidthProvider/>
+        {children}
       </body>
     </html>
   )

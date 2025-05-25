@@ -83,12 +83,12 @@ const config = {
         transparent: 'transparent',
         black: '#000',
         white: '#fff',
-        pr: {
+        primary: {
           light: '#A0BEFF',
           DEFAULT: '#110AFF',
           dark: '#285388'
         },
-        sec: {
+        secondary: {
           light: '#FFE1C6',
           DEFAULT: '#F0923E',
           dark: '#8C4B1D'
@@ -412,4 +412,4 @@ const config = {
   plugins: [],
 }
 
-export default config;
+module.exports = config;

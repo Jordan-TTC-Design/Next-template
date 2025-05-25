@@ -7,7 +7,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className='bg-white sticky top-0 z-50 py-2'>
+    <header className='bg-white sticky opacity-0 top-0 z-50 py-2'>
       <div className="container flex justify-between items-center">
           <div className="flex items-center">
               <h1 className='text-zh-body-1 text-txt'>Logo</h1>

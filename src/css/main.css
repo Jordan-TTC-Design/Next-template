@@ -1,8 +1,8 @@
 /* 導入 Tailwind CSS */
-@import url('tailwindcss/base');
+@tailwind base;
 @import url('./custom-base.css');
-@import url('tailwindcss/components');
-@import url('tailwindcss/utilities');
+@tailwind components;
+@tailwind utilities;
 @import url('./custom-utilities.css');
 
 

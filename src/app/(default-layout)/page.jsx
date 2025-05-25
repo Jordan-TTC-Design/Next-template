@@ -4,7 +4,7 @@ import useStore from '@/store/useStore'
 import allStore from '@/store/allStore'
 import AtomsButton from '@/components/atoms/Button'
 import Link from 'next/link'
-
+import MotionExample from '@/components/examples/AnimationExample'
 
 export default function Home() {
   const { count, increment, decrement, reset } = useStore()
@@ -12,8 +12,9 @@ export default function Home() {
 
   return (
     <main className="min-h-screen p-8 bg-gray-100">
+      <MotionExample />
       <div className="container mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Next.js Template</h1>
+        <h1 motion="fadeIn" className="text-3xl font-bold mb-8">Next.js Template</h1>
         <p>windowWidth: {windowWidth}</p>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-4">Counter Example</h2>
