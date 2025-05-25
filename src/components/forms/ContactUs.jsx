@@ -3,7 +3,6 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import Input from '@/components/commons/controls/Input'
 import Button from '@/components/atoms/Button'
-import FadeIn from '@/components/animations/FadeIn'
 
 const schema = yup.object().shape({
   name: yup.string().required('姓名為必填'),
@@ -37,7 +36,6 @@ export default function ContactUs() {
   }
 
   return (
-    <FadeIn>
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-900">聯絡我們</h2>
@@ -100,6 +98,5 @@ export default function ContactUs() {
           </div>
         </form>
       </div>
-    </FadeIn>
   )
 } 

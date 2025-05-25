@@ -1,6 +1,5 @@
 'use client'
 
-import FadeIn from '@/components/animations/FadeIn'
 import SlideIn from '@/components/animations/SlideIn'
 import ScaleIn from '@/components/animations/ScaleIn'
 import HoverEffect from '@/components/animations/HoverEffect'
@@ -9,9 +8,7 @@ export default function AnimationsPage() {
   return (
     <div className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto space-y-12">
-        <FadeIn>
           <h1 className="text-4xl font-bold mb-8">Animation Examples</h1>
-        </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <SlideIn direction="left" delay={0.2}>
@@ -41,9 +38,7 @@ export default function AnimationsPage() {
               <p>Hover over this card to see the effect</p>
             </div>
           </HoverEffect>
-          <FadeIn>
           <h2 className="text-4xl font-bold mb-8">END</h2>
-        </FadeIn>
         <div className="h-screen w-full bg-red-500"></div>
         </div>
       </div>
