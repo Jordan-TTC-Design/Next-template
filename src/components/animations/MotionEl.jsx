@@ -73,11 +73,17 @@ const MotionEl = forwardRef(({
   const internalRef = useRef(null);
   const elementRef = ref || internalRef;
   
-  // 使用 framer-motion 的 useInView hook
+  // 使用兩個獨立的 useInView 來控制進入和退出動畫
   const isInView = useInView(elementRef, {
     once,
-    margin,
+    margin: '0px 0px -20px 0px', // 只監控下方進入
     amount: threshold
+  });
+
+  const isExiting = useInView(elementRef, {
+    once: false,
+    margin: '0px 0px 0px 0px', // 監控整個視窗
+    amount: 0
   });
 
   // 動畫配置
@@ -100,10 +106,27 @@ const MotionEl = forwardRef(({
     if (once) {
       return isInView ? animationConfig.animate : animationConfig.initial;
     } else {
-      // 不是 once 模式，進場離場都要動畫
       if (exitAnimation) {
-        return isInView ? animationConfig.animate : animationConfig.exit;
+        // 檢查元素是否在視窗上方
+        const rect = elementRef.current?.getBoundingClientRect();
+        const isAboveViewport = rect ? rect.bottom < 0 : false;
+        
+        if (isAboveViewport) {
+          return animationConfig.initial; // 上方離開時無動畫
+        }
+        
+        // 從下方離開時使用退出動畫
+        return isExiting ? animationConfig.animate : animationConfig.exit;
       } else {
+        // 檢查元素是否在視窗上方
+        const rect = elementRef.current?.getBoundingClientRect();
+        const isAboveViewport = rect ? rect.top < 0 : false;
+        
+        if (isAboveViewport) {
+          return animationConfig.animate; // 上方進入時無動畫
+        }
+        
+        // 從下方進入時使用正常動畫
         return isInView ? animationConfig.animate : animationConfig.initial;
       }
     }

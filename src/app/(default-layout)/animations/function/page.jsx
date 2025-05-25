@@ -1,4 +1,3 @@
-'use client';
 import MotionEl from '@/components/animations/MotionEl';
 
 export default function AnimationFunctionPage() {
