@@ -12,6 +12,8 @@ if (typeof window !== 'undefined') {
 export default function ScrollPage() {
   const containerRef = useRef(null)
   const cardsRef = useRef([])
+  const staticContainerRef = useRef(null)
+  const staticCardsRef = useRef([])
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -43,7 +45,7 @@ export default function ScrollPage() {
           start: "top 90%",
           end: "top -30%",
           scrub: 1.5,
-          markers: true,
+          // markers: true,
           onUpdate: (self) => {
             const progress = self.progress
             const isEven = index % 2 === 0
@@ -93,26 +95,134 @@ export default function ScrollPage() {
       })
     })
 
+    // 靜態格子的動畫
+    if (staticContainerRef.current) {
+      // 設置初始狀態：所有卡片都隱藏
+      staticCardsRef.current.forEach((card, index) => {
+        if (!card) return
+        
+        const row = Math.floor(index / 7)
+        const col = index % 7
+        const isCenterCol = col === 3 // 中間列
+        // console.log('index',index,col)
+        gsap.set(card, {
+          opacity: 0,
+          scale: 0.8,
+          y: 100
+        })
+        const delayStart = Math.abs(col - 3) * 5
+        console.log('delay',delayStart)
+        const delayEnd = Math.abs(col - 3) * 10
+        console.log('delayEnd',delayEnd)
+        // 中間列先出現
+        if (isCenterCol) {
+          gsap.to(card, {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: row * 0.1,
+            scrollTrigger: {
+              trigger: staticContainerRef.current,
+              start: "top 100%",
+              end: "top 80%",
+              scrub: 1.5
+            }
+          })
+        } else {
+          // 左右兩側延遲出現
+          
+          gsap.to(card, {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: staticContainerRef.current,
+              start: `top ${90-delayStart}%`,
+              end: `top ${70-delayEnd}%`,
+              scrub: 1.5,
+              // markers: true
+            }
+          })
+        }
+      })
+    }
+
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
     }
   }, [])
 
   return (
-    <main className="p-8 py-[600px] bg-black min-h-[500vh]">
-      <div ref={containerRef} className='gridList grid grid-cols-2 gap-4 max-w-[360px] mx-auto'>
-        {Array.from({ length: 20 }, (_, index) => (
-          <div 
-            key={index} 
-            ref={el => cardsRef.current[index] = el}
-            className='card'
-          >
-            <div className='card-content bg-white aspect-square rounded-lg p-4 flex items-center justify-center'>
-              <span className="text-2xl font-bold text-gray-800">{index + 1}</span>
+    <main className="p-8 bg-black ">
+      <div className='h-[100vh] flex items-center justify-center'>
+        <h1 className='text-white text-4xl font-bold'>
+          <img src="/images/logo-white.svg" alt='logo' className='h-10' />
+        </h1>
+      </div>
+      {/* 原本的動態卡片區域 */}
+   <div className='py-[50vh]'>
+   <div ref={containerRef} className='gridList grid grid-cols-2 gap-4 max-w-[360px] mx-auto'>
+        {Array.from({ length: 20 }, (_, index) => {
+          const bgImageNumber = (index % 10) + 1
+          const bgImagePath = `/images/loginBg/bg-${bgImageNumber}.webp`
+          
+          return (
+            <div 
+              key={index} 
+              ref={el => cardsRef.current[index] = el}
+              className='card'
+            >
+              <div 
+                className='card-content aspect-square rounded-lg relative overflow-hidden'
+                style={{
+                  backgroundImage: `url(${bgImagePath})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
+                <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
+                {/* <span className="text-2xl font-bold text-white relative z-10 drop-shadow-lg">{index + 1}</span> */}
+              </div>
             </div>
-          </div>
-        ))}
-      </div> 
+          )
+        })}
+      </div>
+   </div>
+
+      {/* 新增的動態格子區域 */}
+      <div className='mt-32'>
+        <div ref={staticContainerRef} className='grid grid-cols-7 gap-4 max-w-6xl mx-auto'>
+          {Array.from({ length: 30 }, (_, index) => {
+            const bgImageNumber = (index % 10) + 1
+            const bgImagePath = `/images/loginBg/bg-${bgImageNumber}.webp`
+            const row = Math.floor(index / 7)
+            const col = index % 7
+            
+            return (
+              <div 
+                key={`static-${index}`}
+                ref={el => staticCardsRef.current[index] = el}
+                className='aspect-square rounded-lg relative overflow-hidden'
+                style={{
+                  backgroundImage: `url(${bgImagePath})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+                data-row={row}
+                data-col={col}
+              >
+                <div className="absolute inset-0 bg-black/10 rounded-lg"></div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </main>
   )
 } 
