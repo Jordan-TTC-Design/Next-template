@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "22.15.21",
     "@types/react": "19.1.5",
     "eslint": "^9",

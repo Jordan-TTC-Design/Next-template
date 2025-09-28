@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import LogoWhite from '@/assets/images/logo-white.svg'
 
 // 註冊 ScrollTrigger 插件
 if (typeof window !== 'undefined') {
@@ -160,7 +161,7 @@ export default function ScrollPage() {
     <main className="p-8 bg-black ">
       <div className='h-[100vh] flex items-center justify-center'>
         <h1 className='text-white text-4xl font-bold'>
-          <img src="/images/logo-white.svg" alt='logo' className='h-10' />
+          <LogoWhite className='h-10' />
         </h1>
       </div>
       {/* 原本的動態卡片區域 */}
